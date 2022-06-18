@@ -46,12 +46,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
-/**
- * Created by Enzo Lizama Paredes on 7/26/20.
- * Contact: lizama.enzo@gmail.com
- */
-
 /**
  * Testing the CRUD operations for DAO operations
  */
