@@ -26,14 +26,13 @@ jobs:
     runs-on: [ macos-latest ]
     steps:
       - uses: actions/checkout@v2
-
       - name: Instrumentation Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           script: ./gradlew connectedAndroidTest
 
-  build:
+  Generate_Build:
     needs: [ unit_tests, android_tests ]
     runs-on: ubuntu-latest
     steps:
@@ -66,9 +65,9 @@ jobs:
           path: app/build/outputs/mapping/release/mapping.txt
 
 
-  deploy-firebase:
+  Deploy-Firebase-Distribution:
     # 1
-    needs: [ build ]
+    needs: [ Generate_Build ]
     runs-on: ubuntu-latest
     steps:
       # 2
